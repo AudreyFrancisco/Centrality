@@ -109,6 +109,12 @@ StRefMultCorr* CentralityMaker::getgRefMultCorr_P18ih_VpdMB30()
     return fgRefMultCorr_P18ih_VpdMB30 ;
 }
 
+
+//____________________________________________________________________________________________________
+StRefMultCorr* CentralityMaker::getgRefMultCorr_P18ih_VpdMB30_AllLumi()
+{
+    return fgRefMultCorr_P18ih_VpdMB30 ;
+}
 //____________________________________________________________________________________________________
 StRefMultCorr* CentralityMaker::getgRefMultCorr_VpdMB30()
 {

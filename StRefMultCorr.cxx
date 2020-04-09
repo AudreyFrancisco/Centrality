@@ -311,8 +311,8 @@ Double_t StRefMultCorr::getRefMultCorr(const UShort_t RefMult, const Double_t z,
   Double_t correction_luminosity = (par0l==0.0) ? 1.0 : 1.0/(1.0 + par1l/par0l*zdcCoincidenceRate/1000.);
   if(mName.CompareTo("grefmult_P16id", TString::kIgnoreCase) == 0 ||
      mName.CompareTo("grefmult_P17id_VpdMB30", TString::kIgnoreCase) == 0 ||
-     mName.CompareTo("grefmult_P18ih_VpdMB30", TString::kIgnoreCase) == 0 ||
      mName.CompareTo("grefmult_VpdMB30", TString::kIgnoreCase) == 0 ||
+     mName.CompareTo("grefmult_P18ih_VpdMB30", TString::kIgnoreCase) == 0 ||
      mName.CompareTo("grefmult_VpdMBnoVtx", TString::kIgnoreCase) == 0 ) {
       float zdcmean = 0;
       if(mYear[mParameterIndex] == 2014) zdcmean = 30.;
@@ -474,7 +474,7 @@ Double_t StRefMultCorr::getWeight() const
   const Double_t par6 =   mPar_weight[6][mParameterIndex];//Add by guannan for run14
   const Double_t par7 =   mPar_weight[7][mParameterIndex];//Add by guannan for run14
 
-  // Additional z-vertex dependent correction
+  // Additional z-vetex dependent correction
   //const Double_t A = ((1.27/1.21))/(30.0*30.0); // Don't ask...
   //const Double_t A = (0.05/0.21)/(30.0*30.0); // Don't ask...
 
@@ -567,11 +567,14 @@ const Char_t* StRefMultCorr::getTable() const
   else if ( mName.CompareTo("grefmult_P17id_VpdMB30", TString::kIgnoreCase) == 0 ) {
       return "StRoot/StRefMultCorr/Centrality_def_grefmult_P17id_VpdMB30.txt";
   }
-  else if ( mName.CompareTo("grefmult_P18ih_VpdMB30", TString::kIgnoreCase) == 0 ) {
-      return "StRoot/StRefMultCorr/Centrality_def_grefmult_P18ih_VpdMB30.txt";
-  }
   else if ( mName.CompareTo("grefmult_VpdMB30", TString::kIgnoreCase) == 0 ) {
       return "StRoot/StRefMultCorr/Centrality_def_grefmult_VpdMB30.txt";
+  }
+  else if ( mName.CompareTo("grefmult_P18ic", TString::kIgnoreCase) == 0 ) {
+      return "StRoot/StRefMultCorr/Centrality_def_grefmult_P18ic.txt";
+  }
+  else if ( mName.CompareTo("grefmult_P18ih_VpdMB30", TString::kIgnoreCase) == 0 ) {
+      return "StRoot/StRefMultCorr/Centrality_def_grefmult_P18ic.txt";
   }
   else if ( mName.CompareTo("grefmult_VpdMBnoVtx", TString::kIgnoreCase) == 0 ) {
       return "StRoot/StRefMultCorr/Centrality_def_grefmult_VpdMBnoVtx.txt";
@@ -670,8 +673,8 @@ void StRefMultCorr::readBadRuns()
         sprintf(inputFileName,"StRoot/StRefMultCorr/bad_runs_refmult_year%d_P16id.txt",year);
     else if(mName.CompareTo("grefmult_P17id_VpdMB30", TString::kIgnoreCase) == 0) //read bad runs for P17id, VPDMB30
         sprintf(inputFileName,"StRoot/StRefMultCorr/bad_runs_refmult_year%d_P17id_VpdMB30.txt",year);
-    else if(mName.CompareTo("grefmult_P18ih_VpdMB30", TString::kIgnoreCase) == 0) //read bad runs for P18ih, VPDMB30
-        sprintf(inputFileName,"StRoot/StRefMultCorr/bad_runs_refmult_year%d_P18ih_VpdMB30.txt",year);
+    else if(mName.CompareTo("grefmult_P18ih_VpdMB30", TString::kIgnoreCase) == 0) //read bad runs for VPDMB30
+        sprintf(inputFileName,"StRoot/StRefMultCorr/bad_runs_refmult_year%d_VpdMB30.txt",year);
     else if(mName.CompareTo("grefmult_VpdMB30", TString::kIgnoreCase) == 0) //read bad runs for VPDMB30
         sprintf(inputFileName,"StRoot/StRefMultCorr/bad_runs_refmult_year%d_VpdMB30.txt",year);
     else if(mName.CompareTo("grefmult_VpdMBnoVtx", TString::kIgnoreCase) == 0) //read bad runs for VPDMB-noVtx

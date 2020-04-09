@@ -54,6 +54,7 @@ class CentralityMaker {
     StRefMultCorr* getgRefMultCorr_P18ih_VpdMB30()  ; // for P18ih, VPDMB-30; |vz| < 30, added June10, 2019 (New Run14 production)
     StRefMultCorr* getgRefMultCorr_VpdMB30()  ; // for VPDMB-30; |vz| < 30
     StRefMultCorr* getgRefMultCorr_VpdMBnoVtx()  ; //  for VPDMB-noVtx; |vz| < 100
+    StRefMultCorr* getgRefMultCorr_P18ih_VpdMB30_AllLumi();//to beupdated
 
     // Print help messages
     void help() const ;
